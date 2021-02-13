@@ -1,0 +1,17 @@
+exclude: "docs|node_modules|.git"
+default_stages: [commit]
+fail_fast: true
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: master
+    hooks:
+      - id: trailing-whitespace
+        files: (^|/).+\.(html|css|js)$
+  - repo: https://github.com/prettier/prettier
+    rev: 2.0.5
+    hooks:
+      - id: prettier
+        files: (^|/).+\.js$
+        exclude_types: ["html"]
+        args: ["--write", "--plugin-search-dir=."]

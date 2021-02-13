@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Pedro Younis Studios`,
+    title: `Pedro Younis Photography`,
     description: `A web site for the photographer and artist Pedro Younis Gonçalves.`,
     author: `@mrmikardo`,
   },
@@ -30,6 +30,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    'gatsby-plugin-postcss',
+    "gatsby-plugin-postcss",
   ],
 }

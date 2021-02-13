@@ -5,28 +5,52 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#323234`,
       marginBottom: `1.45rem`,
     }}
+    className="grid grid-cols-2 gap-4"
   >
     <div
       style={{
-        margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `0.4rem`,
+        paddingBottom: `0.7rem`,
       }}
+      className="ml-2"
     >
-      <h1 style={{ margin: 0 }}>
+      <h1
+        style={{
+          margin: 0,
+          maxWidth: `20rem`,
+          lineHeight: 0.9,
+        }}
+      >
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `#F5C4FF`,
             textDecoration: `none`,
+            fontFamily: `Quicksand`,
+            fontSize: `2.1rem`,
           }}
         >
           {siteTitle}
         </Link>
       </h1>
+    </div>
+    <div
+      style={{
+        color: `#F5C4FF`,
+        fontFamily: `Quicksand`,
+        fontSize: `1.5rem`,
+      }}
+      className="space-x-4 justify-self-end self-center font-sans font-extrabold mr-4"
+    >
+      <Link to="/">Home</Link>
+      <span style={{ color: `#A8ECFF` }}>|</span>
+      <Link to="/portfolio">Portfolio</Link>
+      <span style={{ color: `#A8ECFF` }}>|</span>
+      <Link to="/contact">Contact</Link>
     </div>
   </header>
 )
@@ -36,7 +60,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Pedro Younis Photography`,
 }
 
 export default Header

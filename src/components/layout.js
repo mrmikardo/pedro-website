@@ -38,10 +38,9 @@ const Layout = ({ children }) => {
           style={{
             marginTop: `2rem`,
           }}
+          className="flex justify-center font-sans text-sm"
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          © {new Date().getFullYear()}, Pedro Younis Photography
         </footer>
       </div>
     </>
