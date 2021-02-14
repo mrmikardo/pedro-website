@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
           }}
           className="flex justify-center font-sans text-sm"
         >
-          © {new Date().getFullYear()}, Pedro Younis Photography
+          © {new Date().getFullYear()} Pedro Younis Photography
         </footer>
       </div>
     </>

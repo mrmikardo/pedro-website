@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => (
       style={{
         color: `#F5C4FF`,
         fontFamily: `Quicksand`,
-        fontSize: `1.5rem`,
+        fontSize: `1.4rem`,
       }}
       className="space-x-4 justify-self-end self-center font-sans font-extrabold mr-4"
     >
