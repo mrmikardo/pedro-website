@@ -6,3 +6,4 @@
 
 import "./src/styles/global.css"
 import "@fontsource/quicksand/400.css"
+import "@fontsource/source-sans-pro"
