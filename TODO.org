@@ -1,0 +1,7 @@
+* TODO use PM2 to manage strapi + gatsby processes
+* DONE create strapi project within the website project (somehow)
+** created separate strapi project/repo
+* TODO EC2: install pm2, test
+* TODO react lightbox
+** get this working with strapi images!
+* TODO gallery page: query for galleries
