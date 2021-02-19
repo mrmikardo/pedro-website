@@ -8,9 +8,30 @@ import SEO from "../components/seo"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <Img fluid={data.strapiHomePage.image1.localFile.childImageSharp.fluid} />
-    <Img fluid={data.strapiHomePage.image2.localFile.childImageSharp.fluid} />
-    <div className="max-w-lg "></div>
+    <div class="my-20 grid grid-flow-row grid-cols-2 grid-rows-2 gap-3 gap-y-20">
+      <div class="self-center">
+        <Img
+          fluid={data.strapiHomePage.image1.localFile.childImageSharp.fluid}
+        />
+      </div>
+      <div class="justify-self-center">
+        <Img
+          style={{ width: "360px" }}
+          fluid={data.strapiHomePage.image2.localFile.childImageSharp.fluid}
+        />
+      </div>
+      <div class="justify-self-center">
+        <Img
+          style={{ width: "360px" }}
+          fluid={data.strapiHomePage.image3.localFile.childImageSharp.fluid}
+        />
+      </div>
+      <div class="self-center">
+        <Img
+          fluid={data.strapiHomePage.image4.localFile.childImageSharp.fluid}
+        />
+      </div>
+    </div>
   </Layout>
 )
 
@@ -21,7 +42,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -30,7 +51,25 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+      image3 {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+      image4 {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
