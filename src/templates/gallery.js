@@ -1,18 +1,33 @@
 import { graphql } from "gatsby"
 import React from "react"
 import Img from "gatsby-image"
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const GalleryPage = ({ data }) => (
-  <Layout>
-    <SEO title="Portfolio" />
-    <div className="my-20 grid grid-flow-row grid-cols-5 gap-3 gap-y-20">
-      <p>Not much to see, right now...</p>
-      {console.log(data)}
-    </div>
-  </Layout>
+  <SimpleReactLightbox>
+    <Layout>
+      <SEO title="Gallery" />
+      <div className="my-20 grid grid-flow-row grid-cols-5 gap-3 gap-y-20">
+        {console.log(data)}
+        {/* There is one Gallery node for each gallery page */}
+        {data.allStrapiGallery.nodes[0].images.map(image => {
+          return (
+            <div className="self-center p-3" key={image.id}>
+              <SRLWrapper>
+                <Img
+                  fluid={image.image.localFile.childImageSharp.fluid}
+                  style={{ cursor: "pointer" }}
+                />
+              </SRLWrapper>
+            </div>
+          )
+        })}
+      </div>
+    </Layout>
+  </SimpleReactLightbox>
 )
 
 /**
@@ -25,6 +40,7 @@ export const query = graphql`
       nodes {
         title
         images {
+          id
           image {
             localFile {
               childImageSharp {

@@ -26,6 +26,7 @@
     "gatsby-plugin-postcss": "^3.7.0",
     "postcss": "^8.2.4",
     "prettier": "2.2.1",
+    "simple-react-lightbox": "^3.6.3",
     "tailwindcss": "^2.0.2"
   },
   "keywords": [
