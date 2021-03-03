@@ -15,10 +15,9 @@ const GalleryPage = ({ data }) => (
           {/* There is one Gallery node for each gallery page */}
           {data.allStrapiGallery.nodes[0].images.map(image => {
             const img = getImage(image.image.localFile)
-            console.log(img)
             return (
               <div className="self-center p-3" key={image.id}>
-                <GatsbyImage image={img} />
+                <GatsbyImage image={img} alt={image.alternativeText} />
               </div>
             )
           })}
@@ -40,6 +39,7 @@ export const query = graphql`
         images {
           id
           image {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(
