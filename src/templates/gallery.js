@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 
 import Layout from "../components/layout"
@@ -10,22 +10,20 @@ const GalleryPage = ({ data }) => (
   <SimpleReactLightbox>
     <Layout>
       <SEO title="Gallery" />
-      <div className="my-20 grid grid-flow-row grid-cols-5 gap-3 gap-y-20">
-        {console.log(data)}
-        {/* There is one Gallery node for each gallery page */}
-        {data.allStrapiGallery.nodes[0].images.map(image => {
-          return (
-            <div className="self-center p-3" key={image.id}>
-              <SRLWrapper>
-                <Img
-                  fluid={image.image.localFile.childImageSharp.fluid}
-                  style={{ cursor: "pointer" }}
-                />
-              </SRLWrapper>
-            </div>
-          )
-        })}
-      </div>
+      <SRLWrapper>
+        <div className="my-20 grid grid-flow-row grid-cols-5 gap-3 gap-y-20">
+          {/* There is one Gallery node for each gallery page */}
+          {data.allStrapiGallery.nodes[0].images.map(image => {
+            const img = getImage(image.image.localFile)
+            console.log(img)
+            return (
+              <div className="self-center p-3" key={image.id}>
+                <GatsbyImage image={img} />
+              </div>
+            )
+          })}
+        </div>
+      </SRLWrapper>
     </Layout>
   </SimpleReactLightbox>
 )
@@ -44,9 +42,11 @@ export const query = graphql`
           image {
             localFile {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(
+                  width: 800
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }

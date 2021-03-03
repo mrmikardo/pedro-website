@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,12 +10,14 @@ const PortfolioPage = ({ data }) => (
     <SEO title="Portfolio" />
     <div className="my-20 grid grid-flow-row grid-cols-2 gap-3 gap-y-20">
       {data.allStrapiGallery.nodes.map(node => {
+        const img = getImage(node.coverimage.localFile)
         return (
-          <div className="self-center p-3">
+          <div className="self-center p-3" key={node.slug}>
             <Link to={"/gallery/" + node.slug}>
-              <Img
-                fluid={node.coverimage.localFile.childImageSharp.fluid}
+              <GatsbyImage
+                image={img}
                 style={{ cursor: "pointer" }}
+                alt={node.slug}
               />
             </Link>
           </div>
@@ -33,9 +35,11 @@ export const query = graphql`
         coverimage {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(
+                width: 400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }
