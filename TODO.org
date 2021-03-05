@@ -1,10 +1,13 @@
-* TODO discuss galleries with Pedro
-* TODO use PM2 to manage strapi + gatsby processes
-* DONE create strapi project within the website project (somehow)
-** created separate strapi project/repo
-* TODO EC2: install pm2, test
-* TODO react lightbox
-** get this working with strapi images!
-* TODO gallery page: query for galleries
-** pass each child image to react lightbox component
-* DONE image shoud probably have a numeric ID (easier for queries)
+* DONE configure + test tailwind
+* DONE configure prettier pre-commit hook
+* DONE favicon
+* TODO [minor] define classes for key theme colours
+* DONE consider using grid for layout
+* DONE lightbox for portfolio page
+* responsive design
+** DONE home page
+** TODO portfolio page
+** TODO gallery pages
+** TODO contact page...
+* Contact page
+** TODO copy
