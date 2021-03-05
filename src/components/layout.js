@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Sidebar from "./sidebar"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -22,10 +23,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  const [isOpen, toggleSidebar] = React.useState(false)
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header
+        toggleSidebar={toggleSidebar}
+        siteTitle={data.site.siteMetadata?.title || `Title`}
+      />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <div
         style={{
           margin: `0 auto`,
