@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => (
       </div>
     </div>
     {/* Desktop */}
-    <div className="hidden my-20 grid grid-flow-row grid-cols-2 grid-rows-2 gap-3 gap-y-20">
+    <div className="hidden md:grid grid-flow-row grid-cols-2 grid-rows-2 gap-3 gap-y-20 my-20 ">
       <div className="self-center">
         <GatsbyImage
           image={
