@@ -4,52 +4,57 @@ const Sidebar = props => {
   return (
     <div className="md:hidden">
       <div
-        className={`fixed z-30 inset-y-0 left-0 w-64 px-8 py-4 bg-gray-100 border-r
+        className={`fixed z-30 inset-y-0 right-0 w-56 px-8 py-4
         overflow-auto
           transform ${
             props.isOpen
               ? "translate-x-0 ease-out transition-medium"
-              : "-translate-x-full ease-in transition-medium"
+              : "translate-x-full ease-in transition-medium"
           }`}
+        style={{ background: "#58585C" }}
       >
-        <div className="-mx-3 pl-3 pr-1 flex items-center justify-between">
-          <span>
-            <p className="h-10 w-10">Logo</p>
-          </span>
+        <div className="-mx-3 pl-3 pr-1 flex items-center justify-end">
           <button
             onClick={() => props.toggleSidebar(false)}
-            className="text-gray-700 lg:hidden"
+            className="text-gray-700 justify-self-end lg:hidden"
           >
-            <svg fill="none" viewBox="0 0 24 24" className="h-6 w-6">
+            {/* Close menu svg 'X' */}
+            <svg
+              stroke="#A8ECFF"
+              fill="#A8ECFF"
+              viewBox="0 0 24 24"
+              className="h-6 w-6"
+            >
               <path
                 d="M6 18L18 6M6 6L18 18"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                stroke="currentColor"
+                stroke="#A8ECFF"
               />
             </svg>
           </button>
         </div>
-        <nav className="mt-8">
-          <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
-            STUFF
-          </h3>
-          <button className="mt-2 -ml-1 flex items-center text-sm font-medium text-gray-600">
-            <svg
-              className="h-5 w-5 text-gray-500"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M12 7v10m5-5H7"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span className="ml-1">Add Stuff</span>
-          </button>
+        <nav
+          className="mt-8 font-sans font-extrabold"
+          style={{
+            color: `#F5C4FF`,
+            fontFamily: `Quicksand`,
+            fontSize: `1.4rem`,
+          }}
+        >
+          <div className="my-1">
+            <span style={{ color: `#A8ECFF` }}>&#8212;&nbsp;</span>
+            <Link to="/">Home</Link>
+          </div>
+          <div className="my-1">
+            <span style={{ color: `#A8ECFF` }}>&#8212;&nbsp;</span>
+            <Link to="/portfolio">Portfolio</Link>
+          </div>
+          <div className="my-1">
+            <span style={{ color: `#A8ECFF` }}>&#8212;&nbsp;</span>
+            <Link to="/contact">Contact</Link>
+          </div>
         </nav>
       </div>
     </div>

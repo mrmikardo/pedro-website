@@ -43,6 +43,7 @@ const Header = props => {
         class="md:hidden justify-self-end mr-4"
         onClick={() => props.toggleSidebar(true)}
       >
+        {/* Hamburger menu svg */}
         <svg
           viewBox="0 0 100 80"
           width="30"
