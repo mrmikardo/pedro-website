@@ -6,12 +6,38 @@ import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+const options = {
+  thumbnails: {
+    showThumbnails: false,
+  },
+  buttons: {
+    backgroundColor: "rgb(30, 30, 36, 0.0)",
+    iconColor: "#A8ECFF",
+    padding: "20px",
+    showAutoplayButton: false,
+    showFullscreenButton: false,
+    showDownloadButton: false,
+    size: "45px",
+  },
+}
+
 const GalleryPage = ({ data }) => (
   <SimpleReactLightbox>
     <Layout>
       <SEO title="Gallery" />
-      <SRLWrapper>
-        <div className="my-20 grid grid-flow-row grid-cols-5 gap-3 gap-y-20">
+      <SRLWrapper options={options}>
+        <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
+          {/* There is one Gallery node for each gallery page */}
+          {data.allStrapiGallery.nodes[0].images.map(image => {
+            const img = getImage(image.image.localFile)
+            return (
+              <div className="self-center" key={image.id}>
+                <GatsbyImage image={img} alt={image.alternativeText} />
+              </div>
+            )
+          })}
+        </div>
+        <div className="hidden md:grid grid-flow-row grid-cols-5 gap-3 gap-y-20 my-20">
           {/* There is one Gallery node for each gallery page */}
           {data.allStrapiGallery.nodes[0].images.map(image => {
             const img = getImage(image.image.localFile)
