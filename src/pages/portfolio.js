@@ -8,7 +8,25 @@ import SEO from "../components/seo"
 const PortfolioPage = ({ data }) => (
   <Layout>
     <SEO title="Portfolio" />
-    <div className="my-20 grid grid-flow-row grid-cols-2 gap-3 gap-y-20">
+    {/* Mobile */}
+    <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
+      {data.allStrapiGallery.nodes.map(node => {
+        const img = getImage(node.coverimage.localFile)
+        return (
+          <div className="self-center" key={node.slug}>
+            <Link to={"/gallery/" + node.slug}>
+              <GatsbyImage
+                image={img}
+                style={{ cursor: "pointer" }}
+                alt={node.slug}
+              />
+            </Link>
+          </div>
+        )
+      })}
+    </div>
+    {/* Desktop */}
+    <div className="hidden md:grid grid-flow-row grid-cols-2 gap-3 gap-y-20 my-20">
       {data.allStrapiGallery.nodes.map(node => {
         const img = getImage(node.coverimage.localFile)
         return (
