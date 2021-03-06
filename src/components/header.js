@@ -56,7 +56,7 @@ const Header = props => {
           <rect y="60" width="100" height="10" rx="10"></rect>
         </svg>
       </button>
-      <div
+      <nav
         style={{
           color: `#F5C4FF`,
           fontFamily: `Quicksand`,
@@ -69,7 +69,7 @@ const Header = props => {
         <Link to="/portfolio">Portfolio</Link>
         <span style={{ color: `#A8ECFF` }}>|</span>
         <Link to="/contact">Contact</Link>
-      </div>
+      </nav>
     </header>
   )
 }
