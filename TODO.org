@@ -2,12 +2,19 @@
 * DONE configure prettier pre-commit hook
 * DONE favicon
 * TODO [minor] define classes for key theme colours
+** think that tailwind allows you to override default colour utility clases
 * DONE consider using grid for layout
 * DONE lightbox for portfolio page
 * responsive design
 ** DONE home page
-** TODO portfolio page
+** DONE portfolio page
 ** TODO gallery pages
-** TODO contact page...
+** DONE contact page...
 * Contact page
 ** TODO copy
+** DONE social links
+* Navbar
+** DONE wrap elements in <nav>?
+* DONE upgrade Gatsby to ^3.0.0
+* Gatsby page transitions?
+* Navbar slide smoothly in and out?
