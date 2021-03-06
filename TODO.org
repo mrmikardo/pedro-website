@@ -18,3 +18,4 @@
 * DONE upgrade Gatsby to ^3.0.0
 * Gatsby page transitions?
 * Navbar slide smoothly in and out?
+* TODO strapi can't connect to postgres
