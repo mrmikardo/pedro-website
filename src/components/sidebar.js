@@ -1,11 +1,26 @@
 import React from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Sidebar = props => {
+  const data = useStaticQuery(graphql`
+    query CatImageQuery {
+      file(relativePath: { eq: "cat-sidebar.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 300
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
+      }
+    }
+  `)
   return (
     <div className="md:hidden">
       <div
         className={`fixed z-30 inset-y-0 right-0 w-56 px-8 py-4
-        overflow-auto
+        overflow-auto flex flex-col justify-start
           transform ${
             props.isOpen
               ? "translate-x-0 ease-out transition-medium"
@@ -56,6 +71,12 @@ const Sidebar = props => {
             <Link to="/contact">Contact</Link>
           </div>
         </nav>
+        <div className="w-32 self-left mt-40">
+          <GatsbyImage
+            image={data.file.childImageSharp.gatsbyImageData}
+            alt="Cyber Kitty!"
+          />
+        </div>
       </div>
     </div>
   )
