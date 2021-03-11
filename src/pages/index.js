@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => (
       </div>
     </div>
     {/* Desktop */}
-    <div className="hidden md:grid grid-flow-row grid-cols-2 grid-rows-2 gap-3 gap-y-20 my-20 ">
+    <div className="hidden md:grid grid-flow-row grid-cols-3 gap-3 gap-y-20 my-20 ">
       <div className="self-center">
         <GatsbyImage
           image={
@@ -53,30 +53,20 @@ const IndexPage = ({ data }) => (
           alt="Home page image 1"
         />
       </div>
-      <div className="justify-self-center">
+      <div className="">
         <GatsbyImage
-          style={{ width: "360px" }}
           image={
             data.strapiHomePage.image2.localFile.childImageSharp.gatsbyImageData
           }
           alt="Home page image 2"
         />
       </div>
-      <div className="justify-self-center">
+      <div className="">
         <GatsbyImage
-          style={{ width: "360px" }}
           image={
             data.strapiHomePage.image3.localFile.childImageSharp.gatsbyImageData
           }
           alt="Home page image 3"
-        />
-      </div>
-      <div className="self-center">
-        <GatsbyImage
-          image={
-            data.strapiHomePage.image4.localFile.childImageSharp.gatsbyImageData
-          }
-          alt="Home page image 4"
         />
       </div>
     </div>
