@@ -17,6 +17,8 @@ const options = {
     showAutoplayButton: false,
     showFullscreenButton: false,
     showDownloadButton: false,
+    lightboxTransitionSpeed: 0.1,
+    lightboxTransitionTimingFunction: "easeOut",
     size: "45px",
   },
 }
