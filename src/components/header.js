@@ -7,7 +7,6 @@ const Header = props => {
     <header
       style={{
         background: `#323234`,
-        marginBottom: `1.45rem`,
       }}
       className="grid grid-cols-3 md:grid-cols-2 gap-4"
     >
@@ -64,9 +63,16 @@ const Header = props => {
         }}
         className="hidden md:inline-flex space-x-4 justify-self-end self-center font-sans font-extrabold mr-4"
       >
-        <Link to="/">Home</Link>
+        <Link to="/portraits">Portraits</Link>
         <span style={{ color: `#A8ECFF` }}>|</span>
-        <Link to="/portfolio">Portfolio</Link>
+        <Link to="/travel">Travel</Link>
+        <span style={{ color: `#A8ECFF` }}>|</span>
+        <span
+          title="Coming soon!"
+          style={{ cursor: "pointer", color: `#84848A` }}
+        >
+          Shop
+        </span>
         <span style={{ color: `#A8ECFF` }}>|</span>
         <Link to="/contact">Contact</Link>
       </nav>

@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background-color: #ebebeb;
+  /* overflow: hidden; */ /* TODO: only on homepage */
+}
+
+div.wrap {
+  height: 100%;
+  overflow: hidden;
 }

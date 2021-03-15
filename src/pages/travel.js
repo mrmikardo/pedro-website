@@ -46,7 +46,7 @@ const PortfolioPage = ({ data }) => (
 )
 
 export const query = graphql`
-  query PortfolioPageQuery {
+  query TravelPageQuery {
     allStrapiGallery {
       nodes {
         slug
