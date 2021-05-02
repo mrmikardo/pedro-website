@@ -11,7 +11,7 @@ const PortfolioPage = ({ data }) => (
     {/* Mobile */}
     <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
       {data.allStrapiGallery.nodes.map(node => {
-        const img = getImage(node.coverimage.localFile)
+        const img = getImage(node.Images[0].localFile)
         return (
           <div className="self-center" key={node.slug}>
             <Link to={"/gallery/" + node.slug}>
@@ -28,7 +28,7 @@ const PortfolioPage = ({ data }) => (
     {/* Desktop */}
     <div className="hidden md:grid grid-flow-row grid-cols-2 gap-3 gap-y-20 my-20">
       {data.allStrapiGallery.nodes.map(node => {
-        const img = getImage(node.coverimage.localFile)
+        const img = getImage(node.Images[0].localFile)
         return (
           <div className="self-center p-3" key={node.slug}>
             <Link to={"/gallery/" + node.slug}>
@@ -50,7 +50,7 @@ export const query = graphql`
     allStrapiGallery {
       nodes {
         slug
-        coverimage {
+        Images {
           localFile {
             childImageSharp {
               gatsbyImageData(

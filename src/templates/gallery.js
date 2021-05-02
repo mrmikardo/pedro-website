@@ -30,7 +30,7 @@ const GalleryPage = ({ data }) => (
       <SRLWrapper options={options}>
         <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
           {/* There is one Gallery node for each gallery page */}
-          {data.allStrapiGallery.nodes[0].images.map(image => {
+          {data.allStrapiGallery.nodes[0].Images.map(image => {
             const img = getImage(image.localFile)
             return (
               <div className="self-center" key={image.id}>
@@ -41,7 +41,7 @@ const GalleryPage = ({ data }) => (
         </div>
         <div className="hidden md:grid grid-flow-row grid-cols-5 gap-3 gap-y-20 my-20">
           {/* There is one Gallery node for each gallery page */}
-          {data.allStrapiGallery.nodes[0].images.map(image => {
+          {data.allStrapiGallery.nodes[0].Images.map(image => {
             const img = getImage(image.localFile)
             return (
               <div className="self-center p-3" key={image.id}>
@@ -63,8 +63,8 @@ export const query = graphql`
   query($slug: String!) {
     allStrapiGallery(filter: { slug: { eq: $slug } }) {
       nodes {
-        title
-        images {
+        Title
+        Images {
           alternativeText
           localFile {
             childImageSharp {
