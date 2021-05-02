@@ -31,7 +31,7 @@ const GalleryPage = ({ data }) => (
         <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
           {/* There is one Gallery node for each gallery page */}
           {data.allStrapiGallery.nodes[0].images.map(image => {
-            const img = getImage(image.image.localFile)
+            const img = getImage(image.localFile)
             return (
               <div className="self-center" key={image.id}>
                 <GatsbyImage image={img} alt={image.alternativeText} />
@@ -42,7 +42,7 @@ const GalleryPage = ({ data }) => (
         <div className="hidden md:grid grid-flow-row grid-cols-5 gap-3 gap-y-20 my-20">
           {/* There is one Gallery node for each gallery page */}
           {data.allStrapiGallery.nodes[0].images.map(image => {
-            const img = getImage(image.image.localFile)
+            const img = getImage(image.localFile)
             return (
               <div className="self-center p-3" key={image.id}>
                 <GatsbyImage image={img} alt={image.alternativeText} />
@@ -65,17 +65,14 @@ export const query = graphql`
       nodes {
         title
         images {
-          id
-          image {
-            alternativeText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 800
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 800
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }
