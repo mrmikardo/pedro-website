@@ -21,7 +21,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.API_URL || `http://localhost:1337`,
-        singleTypes: ["home-page"],
+        singleTypes: ["home-page", "contact-page"],
         contentTypes: ["gallery"],
         queryLimit: 1000,
       },
