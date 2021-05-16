@@ -19,7 +19,7 @@ const GalleryPage = ({ data }) => (
         )
       })}
     </div>
-    <div className="hidden md:grid grid-flow-row grid-cols-5 gap-3 gap-y-20 my-20">
+    <div className="hidden md:grid grid-flow-row grid-cols-2 gap-3 gap-y-20 my-20">
       {/* There is one Gallery node for each gallery page */}
       {data.allStrapiGallery.nodes[0].Images.map(image => {
         const img = getImage(image.localFile)
