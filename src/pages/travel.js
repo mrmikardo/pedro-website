@@ -30,7 +30,7 @@ const PortfolioPage = ({ data }) => (
       {data.allStrapiGallery.nodes.map(node => {
         const img = getImage(node.Images[0].localFile)
         return (
-          <div className="self-center p-3" key={node.slug}>
+          <div className="flex justify-center p-3" key={node.slug}>
             <Link to={"/gallery/" + node.slug}>
               <GatsbyImage
                 image={img}

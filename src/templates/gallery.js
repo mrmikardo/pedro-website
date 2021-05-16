@@ -44,7 +44,7 @@ const GalleryPage = ({ data }) => (
           {data.allStrapiGallery.nodes[0].Images.map(image => {
             const img = getImage(image.localFile)
             return (
-              <div className="self-center p-3" key={image.id}>
+              <div className="flex justify-center p-3" key={image.id}>
                 <GatsbyImage image={img} alt={image.alternativeText} />
               </div>
             )
