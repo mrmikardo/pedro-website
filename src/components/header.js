@@ -12,10 +12,10 @@ const Header = props => {
     >
       <div
         style={{
-          padding: `0.4rem`,
+          paddingTop: `0.4rem`,
           paddingBottom: `0.7rem`,
         }}
-        className="ml-2 col-span-2 md:col-span-1 max-w-sm md:max-w-xs"
+        className="ml-2 col-span-2 md:col-span-1 max-w-sm md:max-w-xs pl-0 md:pl-1"
       >
         <h1
           style={{
@@ -30,7 +30,7 @@ const Header = props => {
               color: `#F5C4FF`,
               textDecoration: `none`,
               fontFamily: `Quicksand`,
-              fontSize: `2.1rem`,
+              fontSize: `1.95rem`,
             }}
           >
             {props.siteTitle}
