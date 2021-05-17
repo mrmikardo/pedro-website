@@ -68,10 +68,6 @@ const Sidebar = props => {
           </div>
           <div className="my-1">
             <span style={{ color: `#A8ECFF` }}>&#8212;&nbsp;</span>
-            <Link to="/travel">Travel</Link>
-          </div>
-          <div className="my-1">
-            <span style={{ color: `#A8ECFF` }}>&#8212;&nbsp;</span>
             <Link to="/contact">Contact</Link>
           </div>
         </nav>
