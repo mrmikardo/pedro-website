@@ -26,6 +26,14 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Price"],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
