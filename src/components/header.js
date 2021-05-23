@@ -65,12 +65,7 @@ const Header = props => {
       >
         <Link to="/portraits">Portraits</Link>
         <span style={{ color: `#A8ECFF` }}>|</span>
-        <span
-          title="Coming soon!"
-          style={{ cursor: "default", color: `#84848A` }}
-        >
-          Shop
-        </span>
+        <Link to="/store">Store</Link>
         <span style={{ color: `#A8ECFF` }}>|</span>
         <Link to="/contact">Contact</Link>
       </nav>
