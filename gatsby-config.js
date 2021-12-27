@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: `Pedro Younis Photography`,
     description: `A web site for the photographer and artist Pedro Younis Gonçalves.`,
