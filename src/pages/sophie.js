@@ -20,6 +20,7 @@ const SophiePage = ({ data }) => (
       {/* FIRST ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image1.localFile)}
           alt={data.allStrapiSophie.nodes[0].image1.alternativeText}
         />
@@ -28,6 +29,7 @@ const SophiePage = ({ data }) => (
       {/* SECOND ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image2.localFile)}
           alt={data.allStrapiSophie.nodes[0].image2.alternativeText}
         />
@@ -36,6 +38,7 @@ const SophiePage = ({ data }) => (
       {/* THIRD ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image3.localFile)}
           alt={data.allStrapiSophie.nodes[0].image3.alternativeText}
         />
@@ -44,6 +47,7 @@ const SophiePage = ({ data }) => (
       {/* FOURTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "750px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image4.localFile)}
           alt={data.allStrapiSophie.nodes[0].image4.alternativeText}
         />
@@ -52,6 +56,7 @@ const SophiePage = ({ data }) => (
       {/* FIFTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image5.localFile)}
           alt={data.allStrapiSophie.nodes[0].image5.alternativeText}
         />
@@ -61,12 +66,14 @@ const SophiePage = ({ data }) => (
       <div className="col-span-2 flex justify-center">
         <div className="mr-3">
           <GatsbyImage
+            style={{ width: "400px" }}
             image={getImage(data.allStrapiSophie.nodes[0].image6.localFile)}
             alt={data.allStrapiSophie.nodes[0].image6.alternativeText}
           />
         </div>
         <div className="ml-3">
           <GatsbyImage
+            style={{ width: "400px" }}
             image={getImage(data.allStrapiSophie.nodes[0].image7.localFile)}
             alt={data.allStrapiSophie.nodes[0].image7.alternativeText}
           />
@@ -76,6 +83,7 @@ const SophiePage = ({ data }) => (
       {/* SEVENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image8.localFile)}
           alt={data.allStrapiSophie.nodes[0].image8.alternativeText}
         />
@@ -84,6 +92,7 @@ const SophiePage = ({ data }) => (
       {/* EIGHTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "1000px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image9.localFile)}
           alt={data.allStrapiSophie.nodes[0].image9.alternativeText}
         />
@@ -92,6 +101,7 @@ const SophiePage = ({ data }) => (
       {/* NINTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image10.localFile)}
           alt={data.allStrapiSophie.nodes[0].image10.alternativeText}
         />
@@ -100,6 +110,7 @@ const SophiePage = ({ data }) => (
       {/* TENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image11.localFile)}
           alt={data.allStrapiSophie.nodes[0].image11.alternativeText}
         />
@@ -108,6 +119,7 @@ const SophiePage = ({ data }) => (
       {/* ELEVENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image12.localFile)}
           alt={data.allStrapiSophie.nodes[0].image12.alternativeText}
         />
@@ -116,6 +128,7 @@ const SophiePage = ({ data }) => (
       {/* TWELFTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image13.localFile)}
           alt={data.allStrapiSophie.nodes[0].image13.alternativeText}
         />
@@ -124,6 +137,7 @@ const SophiePage = ({ data }) => (
       {/* THIRTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image14.localFile)}
           alt={data.allStrapiSophie.nodes[0].image14.alternativeText}
         />
@@ -132,6 +146,7 @@ const SophiePage = ({ data }) => (
       {/* FOURTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image15.localFile)}
           alt={data.allStrapiSophie.nodes[0].image15.alternativeText}
         />
@@ -140,6 +155,7 @@ const SophiePage = ({ data }) => (
       {/* FIFTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image16.localFile)}
           alt={data.allStrapiSophie.nodes[0].image16.alternativeText}
         />
@@ -148,6 +164,7 @@ const SophiePage = ({ data }) => (
       {/* SIXTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image17.localFile)}
           alt={data.allStrapiSophie.nodes[0].image17.alternativeText}
         />
@@ -156,6 +173,7 @@ const SophiePage = ({ data }) => (
       {/* SEVENTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image18.localFile)}
           alt={data.allStrapiSophie.nodes[0].image18.alternativeText}
         />
@@ -164,6 +182,7 @@ const SophiePage = ({ data }) => (
       {/* EIGHTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "1100px" }}
           image={getImage(data.allStrapiSophie.nodes[0].image19.localFile)}
           alt={data.allStrapiSophie.nodes[0].image19.alternativeText}
         />
@@ -185,11 +204,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -197,11 +212,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -209,11 +220,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -221,11 +228,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -233,11 +236,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -245,11 +244,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -257,11 +252,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -269,11 +260,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -281,11 +268,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -293,11 +276,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -305,11 +284,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -317,11 +292,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 826
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -329,11 +300,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -341,11 +308,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -353,11 +316,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 826
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -365,11 +324,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -377,11 +332,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 500
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -389,11 +340,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 500
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -401,11 +348,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 500
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }

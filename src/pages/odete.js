@@ -20,6 +20,7 @@ const OdetePage = ({ data }) => (
       {/* FIRST ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "826px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image1.localFile)}
           alt={data.allStrapiOdete.nodes[0].image1.alternativeText}
         />
@@ -28,6 +29,7 @@ const OdetePage = ({ data }) => (
       {/* SECOND ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image2.localFile)}
           alt={data.allStrapiOdete.nodes[0].image2.alternativeText}
         />
@@ -36,6 +38,7 @@ const OdetePage = ({ data }) => (
       {/* THIRD ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "826px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image3.localFile)}
           alt={data.allStrapiOdete.nodes[0].image3.alternativeText}
         />
@@ -44,6 +47,7 @@ const OdetePage = ({ data }) => (
       {/* FOURTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "826px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image4.localFile)}
           alt={data.allStrapiOdete.nodes[0].image4.alternativeText}
         />
@@ -52,6 +56,7 @@ const OdetePage = ({ data }) => (
       {/* FIFTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image5.localFile)}
           alt={data.allStrapiOdete.nodes[0].image5.alternativeText}
         />
@@ -60,6 +65,7 @@ const OdetePage = ({ data }) => (
       {/* SIXTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "826px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image6.localFile)}
           alt={data.allStrapiOdete.nodes[0].image6.alternativeText}
         />
@@ -68,6 +74,7 @@ const OdetePage = ({ data }) => (
       {/* SEVENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image7.localFile)}
           alt={data.allStrapiOdete.nodes[0].image7.alternativeText}
         />
@@ -76,21 +83,24 @@ const OdetePage = ({ data }) => (
       {/* EIGHTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "826px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image8.localFile)}
           alt={data.allStrapiOdete.nodes[0].image8.alternativeText}
         />
       </div>
       {/* /EIGHTH ROW */}
       {/* NINTH ROW */}
-      <div className="col-span-2 flex justify-center">
+      <div className="my-8 col-span-2 flex justify-center">
         <div className="mr-3">
           <GatsbyImage
+            style={{ width: "550px" }}
             image={getImage(data.allStrapiOdete.nodes[0].image9.localFile)}
             alt={data.allStrapiOdete.nodes[0].image9.alternativeText}
           />
         </div>
         <div className="ml-3">
           <GatsbyImage
+            style={{ width: "550px" }}
             image={getImage(data.allStrapiOdete.nodes[0].image10.localFile)}
             alt={data.allStrapiOdete.nodes[0].image10.alternativeText}
           />
@@ -100,6 +110,7 @@ const OdetePage = ({ data }) => (
       {/* TENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image11.localFile)}
           alt={data.allStrapiOdete.nodes[0].image11.alternativeText}
         />
@@ -108,6 +119,7 @@ const OdetePage = ({ data }) => (
       {/* ELEVENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "450px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image12.localFile)}
           alt={data.allStrapiOdete.nodes[0].image12.alternativeText}
         />
@@ -116,6 +128,7 @@ const OdetePage = ({ data }) => (
       {/* TWELFTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image13.localFile)}
           alt={data.allStrapiOdete.nodes[0].image13.alternativeText}
         />
@@ -124,6 +137,7 @@ const OdetePage = ({ data }) => (
       {/* THIRTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image14.localFile)}
           alt={data.allStrapiOdete.nodes[0].image14.alternativeText}
         />
@@ -132,6 +146,7 @@ const OdetePage = ({ data }) => (
       {/* FOURTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
+          style={{ width: "800px" }}
           image={getImage(data.allStrapiOdete.nodes[0].image15.localFile)}
           alt={data.allStrapiOdete.nodes[0].image15.alternativeText}
         />
@@ -153,11 +168,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -165,11 +176,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -177,11 +184,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -189,11 +192,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -201,11 +200,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -213,11 +208,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -225,11 +216,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -237,11 +224,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -249,11 +232,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -261,11 +240,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -273,11 +248,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -285,11 +256,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 826
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -297,11 +264,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -309,11 +272,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -321,11 +280,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 826
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -333,11 +288,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 450
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -345,11 +296,7 @@ export const query = graphql`
           alternativeText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 500
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }

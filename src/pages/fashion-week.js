@@ -5,14 +5,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const MiriamPage = ({ data }) => (
+const FashionWeekPage = ({ data }) => (
   <Layout>
-    <SEO title="Miriam" />
+    <SEO title="Fashion Week" />
     <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
       <div className="self-center" style={{ height: "4rem" }}>
         <GatsbyImage
-          image={getImage(data.allStrapiMiriam.nodes[0].image1.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image1.alternativeText}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image1.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image1.alternativeText}
         />
       </div>
     </div>
@@ -21,8 +21,8 @@ const MiriamPage = ({ data }) => (
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
           style={{ width: "826px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image1.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image1.alternativeText}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image1.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image1.alternativeText}
         />
       </div>
       {/* /FIRST ROW */}
@@ -30,52 +30,56 @@ const MiriamPage = ({ data }) => (
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
           style={{ width: "450px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image2.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image2.alternativeText}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image2.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image2.alternativeText}
         />
       </div>
       {/* /SECOND ROW */}
       {/* THIRD ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "826px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image3.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image3.alternativeText}
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image3.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image3.alternativeText}
         />
       </div>
       {/* /THIRD ROW */}
       {/* FOURTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "450px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image4.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image4.alternativeText}
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image4.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image4.alternativeText}
         />
       </div>
       {/* /FOURTH ROW */}
       {/* FIFTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "826px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image5.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image5.alternativeText}
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image5.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image5.alternativeText}
         />
       </div>
       {/* /FIFTH ROW */}
       {/* SIXTH ROW */}
-      <div className="col-span-2 flex justify-center">
+      <div className="my-8 col-span-2 flex justify-center">
         <div className="mr-3">
           <GatsbyImage
             style={{ width: "400px" }}
-            image={getImage(data.allStrapiMiriam.nodes[0].image6.localFile)}
-            alt={data.allStrapiMiriam.nodes[0].image6.alternativeText}
+            image={getImage(
+              data.allStrapiFashionWeek.nodes[0].image6.localFile
+            )}
+            alt={data.allStrapiFashionWeek.nodes[0].image6.alternativeText}
           />
         </div>
         <div className="ml-3">
           <GatsbyImage
             style={{ width: "400px" }}
-            image={getImage(data.allStrapiMiriam.nodes[0].image7.localFile)}
-            alt={data.allStrapiMiriam.nodes[0].image7.alternativeText}
+            image={getImage(
+              data.allStrapiFashionWeek.nodes[0].image7.localFile
+            )}
+            alt={data.allStrapiFashionWeek.nodes[0].image7.alternativeText}
           />
         </div>
       </div>
@@ -83,9 +87,9 @@ const MiriamPage = ({ data }) => (
       {/* SEVENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "450px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image8.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image8.alternativeText}
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image8.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image8.alternativeText}
         />
       </div>
       {/* /SEVENTH ROW */}
@@ -93,8 +97,8 @@ const MiriamPage = ({ data }) => (
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
           style={{ width: "450px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image9.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image9.alternativeText}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image9.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image9.alternativeText}
         />
       </div>
       {/* /EIGHTH ROW */}
@@ -102,25 +106,29 @@ const MiriamPage = ({ data }) => (
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
           style={{ width: "450px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image10.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image10.alternativeText}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image10.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image10.alternativeText}
         />
       </div>
       {/* /NINTH ROW */}
       {/* TENTH ROW */}
-      <div className="col-span-2 flex justify-center">
+      <div className="my-8 col-span-2 flex justify-center">
         <div className="mr-3">
           <GatsbyImage
             style={{ width: "400px" }}
-            image={getImage(data.allStrapiMiriam.nodes[0].image11.localFile)}
-            alt={data.allStrapiMiriam.nodes[0].image11.alternativeText}
+            image={getImage(
+              data.allStrapiFashionWeek.nodes[0].image11.localFile
+            )}
+            alt={data.allStrapiFashionWeek.nodes[0].image11.alternativeText}
           />
         </div>
         <div className="ml-3">
           <GatsbyImage
             style={{ width: "400px" }}
-            image={getImage(data.allStrapiMiriam.nodes[0].image12.localFile)}
-            alt={data.allStrapiMiriam.nodes[0].image12.alternativeText}
+            image={getImage(
+              data.allStrapiFashionWeek.nodes[0].image12.localFile
+            )}
+            alt={data.allStrapiFashionWeek.nodes[0].image12.alternativeText}
           />
         </div>
       </div>
@@ -128,48 +136,48 @@ const MiriamPage = ({ data }) => (
       {/* ELEVENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "826px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image13.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image13.alternativeText}
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image13.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image13.alternativeText}
         />
       </div>
       {/* /ELEVENTH ROW */}
       {/* TWELFTH ROW */}
-      <div className="-mb-5 col-span-2 flex justify-center">
-        <div className="mr-3">
-          <GatsbyImage
-            style={{ width: "400px" }}
-            image={getImage(data.allStrapiMiriam.nodes[0].image14.localFile)}
-            alt={data.allStrapiMiriam.nodes[0].image14.alternativeText}
-          />
-        </div>
-        <div className="ml-3">
-          <GatsbyImage
-            style={{ width: "400px" }}
-            image={getImage(data.allStrapiMiriam.nodes[0].image15.localFile)}
-            alt={data.allStrapiMiriam.nodes[0].image15.alternativeText}
-          />
-        </div>
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image14.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image14.alternativeText}
+        />
       </div>
       {/* /TWELFTH ROW */}
       {/* THIRTEENTH ROW */}
-      <div className="-mt-5 col-span-2 flex justify-center">
+      <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "450px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image16.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image16.alternativeText}
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image15.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image15.alternativeText}
         />
       </div>
       {/* /THIRTEENTH ROW */}
       {/* FOURTEENTH ROW */}
       <div className="col-span-2 flex justify-center">
         <GatsbyImage
-          style={{ width: "900px" }}
-          image={getImage(data.allStrapiMiriam.nodes[0].image17.localFile)}
-          alt={data.allStrapiMiriam.nodes[0].image17.alternativeText}
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image16.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image16.alternativeText}
         />
       </div>
       {/* /FOURTEENTH ROW */}
+      {/* FIFTEENTH ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image17.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image17.alternativeText}
+        />
+      </div>
+      {/* /FIFTEENTH ROW */}
     </div>
   </Layout>
 )
@@ -179,8 +187,8 @@ const MiriamPage = ({ data }) => (
  * Return its title and all the images it contains.
  */
 export const query = graphql`
-  query MiriamPageQuery {
-    allStrapiMiriam {
+  query FashionWeekPageQuery {
+    allStrapiFashionWeek {
       nodes {
         image1 {
           alternativeText
@@ -318,9 +326,81 @@ export const query = graphql`
             }
           }
         }
+        image18 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image19 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image20 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image21 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image22 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image23 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image24 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image25 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        image26 {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
       }
     }
   }
 `
 
-export default MiriamPage
+export default FashionWeekPage
