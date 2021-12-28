@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
     <>
       <Header
         toggleSidebar={toggleSidebar}
-        siteTitle={data.site.siteMetadata?.title || `Title`}
+        siteTitle={data.site.siteMetadata?.title || `Pedro Younis Photography`}
       />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <div
