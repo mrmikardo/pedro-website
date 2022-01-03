@@ -9,10 +9,160 @@ const FashionWeekPage = ({ data }) => (
   <Layout>
     <SEO title="Fashion Week" />
     <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
-      <div className="self-center" style={{ height: "4rem" }}>
+      <div className="mb-3 mt-6">
         <GatsbyImage
           image={getImage(data.allStrapiFashionWeek.nodes[0].image1.localFile)}
           alt={data.allStrapiFashionWeek.nodes[0].image1.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image2.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image2.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image3.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image3.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image4.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image4.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image5.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image5.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image6.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image6.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image7.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image7.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image8.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image8.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image9.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image9.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image10.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image10.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image11.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image11.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image12.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image12.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image13.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image13.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image14.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image14.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image15.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image15.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image16.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image16.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image17.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image17.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image18.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image18.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image19.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image19.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image20.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image20.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image21.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image21.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image22.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image22.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image23.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image23.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image24.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image24.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image25.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image25.alternativeText}
+        />
+      </div>
+      <div className="my-3">
+        <GatsbyImage
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image26.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image26.alternativeText}
         />
       </div>
     </div>
