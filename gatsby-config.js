@@ -31,6 +31,7 @@ module.exports = {
           "sophie",
           "odete",
           "fashion-week",
+          "portrait-page",
         ],
         contentTypes: ["gallery"],
         queryLimit: 1000,
