@@ -10,12 +10,65 @@ const PortfolioPage = ({ data }) => (
     <SEO title="Portfolio" />
     {/* Mobile */}
     <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
-      <div className="mr-3">
-        <GatsbyImage
-          style={{ width: "550px" }}
-          image={getImage(data.allStrapiPortraitPage.nodes[0].sophie.localFile)}
-          alt={data.allStrapiPortraitPage.nodes[0].sophie.alternativeText}
-        />
+      <div className="mb-3 mt-6">
+        <a href="/sophie">
+          <GatsbyImage
+            image={getImage(
+              data.allStrapiPortraitPage.nodes[0].sophie.localFile
+            )}
+            alt={data.allStrapiPortraitPage.nodes[0].sophie.alternativeText}
+          />
+        </a>
+      </div>
+      <div className="my-3">
+        <a href="/bea">
+          <GatsbyImage
+            image={getImage(data.allStrapiPortraitPage.nodes[0].bea.localFile)}
+            alt={data.allStrapiPortraitPage.nodes[0].bea.alternativeText}
+          />
+        </a>
+      </div>
+      <div className="my-3">
+        <a href="/miriam">
+          <GatsbyImage
+            image={getImage(
+              data.allStrapiPortraitPage.nodes[0].miriam.localFile
+            )}
+            alt={data.allStrapiPortraitPage.nodes[0].miriam.alternativeText}
+          />
+        </a>
+      </div>
+      <div className="my-3">
+        <a href="/fashion-week">
+          <GatsbyImage
+            image={getImage(
+              data.allStrapiPortraitPage.nodes[0].fashionweek.localFile
+            )}
+            alt={
+              data.allStrapiPortraitPage.nodes[0].fashionweek.alternativeText
+            }
+          />
+        </a>
+      </div>
+      <div className="my-3">
+        <a href="/owanj">
+          <GatsbyImage
+            image={getImage(
+              data.allStrapiPortraitPage.nodes[0].owanj.localFile
+            )}
+            alt={data.allStrapiPortraitPage.nodes[0].owanj.alternativeText}
+          />
+        </a>
+      </div>
+      <div className="my-3">
+        <a href="/odete">
+          <GatsbyImage
+            image={getImage(
+              data.allStrapiPortraitPage.nodes[0].odete.localFile
+            )}
+            alt={data.allStrapiPortraitPage.nodes[0].odete.alternativeText}
+          />
+        </a>
       </div>
     </div>
     {/* Desktop */}
