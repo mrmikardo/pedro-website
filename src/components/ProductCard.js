@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import getStripe from "../utils/stripe"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const formatPrice = (amount, currency) => {
   let price = (amount / 100).toFixed(2)
@@ -23,8 +24,8 @@ const ProductCard = ({ product }) => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price, quantity: 1 }],
-      successUrl: `${window.location.origin}/page-2/`,
-      cancelUrl: `${window.location.origin}/advanced`,
+      successUrl: `${window.location.origin}/store`,
+      cancelUrl: `${window.location.origin}/store`,
     })
 
     if (error) {
@@ -35,7 +36,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="card mx-3">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="mb-0">
         <fieldset style={{ border: "none" }}>
           <legend>
             <h4>{product.name}</h4>
@@ -51,12 +52,19 @@ const ProductCard = ({ product }) => {
             </select>
           </label>
         </fieldset>
-        <button
-          disabled={loading}
-          className="rounded-lg bg-purple-400 hover:bg-cyan-250 transform hover:-translate-y-px shadow-lg block text-sm px-6 py-3 uppercase"
-        >
-          Buy
-        </button>
+        <GatsbyImage
+          image={getImage(product.localFiles[0])}
+          alt={`Image of ${product.name}`}
+          className="mb-4 thumbnail"
+        />
+        <div className="flex items-center justify-center">
+          <button
+            disabled={loading}
+            className="rounded-lg bg-purple-400 hover:bg-cyan-250 transform hover:-translate-y-px shadow-lg text-sm font-semibold px-8 py-3 uppercase"
+          >
+            Buy
+          </button>
+        </div>
       </form>
     </div>
   )

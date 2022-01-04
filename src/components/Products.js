@@ -28,6 +28,15 @@ const Products = () => {
                 product {
                   id
                   name
+                  description
+                  localFiles {
+                    childImageSharp {
+                      gatsbyImageData(
+                        formats: [AUTO, WEBP, AVIF]
+                        placeholder: BLURRED
+                      )
+                    }
+                  }
                 }
               }
             }
@@ -43,7 +52,14 @@ const Products = () => {
             products[product.id] = product
             products[product.id].prices = []
           }
-          products[product.id].prices.push(price)
+          // Don't include product key - don't want infinite
+          // nestings of prices -> products -> prices...!
+          products[product.id].prices.push({
+            id: price.id,
+            active: price.active,
+            currency: price.currency,
+            unit_amount: price.unit_amount,
+          })
         }
         return (
           <React.Fragment>
