@@ -35,7 +35,6 @@ const Products = () => {
         }
       `}
       render={({ prices }) => {
-        console.log(prices)
         // Group prices by product
         const products = {}
         for (const { node: price } of prices.edges) {
@@ -47,11 +46,11 @@ const Products = () => {
           products[product.id].prices.push(price)
         }
         return (
-          <div style={containerStyles}>
+          <React.Fragment>
             {Object.keys(products).map(key => (
               <ProductCard key={products[key].id} product={products[key]} />
             ))}
-          </div>
+          </React.Fragment>
         )
       }}
     />
