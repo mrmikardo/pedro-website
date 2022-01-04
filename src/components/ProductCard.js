@@ -24,10 +24,12 @@ const buttonStyles = {
   borderRadius: "6px",
   letterSpacing: "1.5px",
 }
+
 const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
+
 const formatPrice = (amount, currency) => {
   let price = (amount / 100).toFixed(2)
   let numberFormat = new Intl.NumberFormat(["en-US"], {
@@ -38,11 +40,13 @@ const formatPrice = (amount, currency) => {
   return numberFormat.format(price)
 }
 
-const ProductCard = ({ product, prices }) => {
+const ProductCard = ({ product }) => {
   const [loading, setLoading] = useState(false)
+
   const handleSubmit = async event => {
     event.preventDefault()
     setLoading(true)
+
     const price = new FormData(event.target).get("priceSelect")
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
@@ -51,11 +55,13 @@ const ProductCard = ({ product, prices }) => {
       successUrl: `${window.location.origin}/page-2/`,
       cancelUrl: `${window.location.origin}/advanced`,
     })
+
     if (error) {
       console.warn("Error:", error)
       setLoading(false)
     }
   }
+
   return (
     <div style={cardStyles}>
       <form onSubmit={handleSubmit}>
@@ -66,7 +72,7 @@ const ProductCard = ({ product, prices }) => {
           <label>
             Price{" "}
             <select name="priceSelect">
-              {prices.map(price => (
+              {product.prices.map(price => (
                 <option key={price.id} value={price.id}>
                   {formatPrice(price.unit_amount, price.currency)}
                 </option>
@@ -88,4 +94,5 @@ const ProductCard = ({ product, prices }) => {
     </div>
   )
 }
+
 export default ProductCard
