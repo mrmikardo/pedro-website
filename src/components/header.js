@@ -39,7 +39,7 @@ const Header = props => {
       </div>
       <button
         id="hamburgerbtn"
-        class="md:hidden justify-self-end mr-4"
+        className="md:hidden justify-self-end mr-4"
         onClick={() => props.toggleSidebar(true)}
       >
         {/* Hamburger menu svg */}
