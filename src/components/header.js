@@ -64,9 +64,9 @@ const Header = props => {
         className="hidden md:inline-flex space-x-4 justify-self-end self-center font-sans font-extrabold mr-4"
       >
         <Link to="/portraits">Portraits</Link>
-        <span style={{ color: `#A8ECFF` }}>|</span>
+        <span className="text-cyan-250">|</span>
         <Link to="/store">Store</Link>
-        <span style={{ color: `#A8ECFF` }}>|</span>
+        <span className="text-cyan-250">|</span>
         <Link to="/contact">Contact</Link>
       </nav>
     </header>
