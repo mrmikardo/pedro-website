@@ -19,7 +19,8 @@ const ProductCard = ({ product }) => {
     event.preventDefault()
     setLoading(true)
 
-    const price = new FormData(event.target).get("priceSelect")
+    // const price = new FormData(event.target).get("priceSelect")
+    const price = product.prices[0].id
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
@@ -35,22 +36,30 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="card mx-3">
+    <div className="card mx-3 my-3 md:my-0">
       <form onSubmit={handleSubmit} className="mb-0">
+        <div className="flex flex-row justify-between">
+          <h4>{product.name}</h4>
+          <div className="rounded-lg bg-yellow-400 px-3 py-2 text-right mb-0">
+            £{product.prices[0].unit_amount / 100}.00
+          </div>
+        </div>
         <fieldset style={{ border: "none" }}>
           <legend>
-            <h4>{product.name}</h4>
+            <p className="mb-0">{product.description}</p>
           </legend>
+          {/*
           <label>
             Price{" "}
-            <select name="priceSelect">
+            <select name="priceSelect" onChange={handleChange} className="rounded">
               {product.prices.map(price => (
                 <option key={price.id} value={price.id}>
-                  {formatPrice(price.unit_amount, price.currency)}
+                  {price.description}
                 </option>
               ))}
             </select>
           </label>
+          */}
         </fieldset>
         <GatsbyImage
           image={getImage(product.localFiles[0])}

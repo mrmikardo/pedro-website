@@ -17,6 +17,7 @@ const Products = () => {
                 active
                 currency
                 unit_amount
+                nickname
                 product {
                   id
                   name
@@ -51,9 +52,11 @@ const Products = () => {
             active: price.active,
             currency: price.currency,
             unit_amount: price.unit_amount,
+            description: price.nickname, // rename key to something sensible
           })
         }
         return (
+          // <div className="mt-4 md:mt-0">
           <React.Fragment>
             {Object.keys(products).map(key => (
               <ProductCard key={products[key].id} product={products[key]} />

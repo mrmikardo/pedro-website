@@ -8,7 +8,7 @@ const StorePage = () => (
     <SEO title="Store" />
     {/* Mobile */}
     <div className="md:hidden grid grid-flow-row grid-cols-1 gap-2 gap-y-1">
-      {/* TODO */}
+      <Products />
     </div>
     {/* Desktop */}
     <div className="hidden md:grid grid-flow-row grid-cols-2 gap-3 gap-y-20 my-20">
