@@ -36,11 +36,11 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="card mx-3 my-3 md:my-0">
+    <div className="card mx-3 my-3 md:my-0 md:-mb-6">
       <form onSubmit={handleSubmit} className="mb-0">
         <div className="flex flex-row justify-between">
           <h4>{product.name}</h4>
-          <div className="rounded-lg bg-yellow-400 px-3 py-2 text-right mb-0">
+          <div className="rounded-lg bg-yellow-400 px-3 py-2 -mt-2 mb-2 text-right font-semibold">
             £{product.prices[0].unit_amount / 100}.00
           </div>
         </div>

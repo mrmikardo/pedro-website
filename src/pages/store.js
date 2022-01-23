@@ -11,7 +11,7 @@ const StorePage = () => (
       <Products />
     </div>
     {/* Desktop */}
-    <div className="hidden md:grid grid-flow-row grid-cols-2 gap-3 gap-y-20 my-20">
+    <div className="hidden md:grid grid-flow-row grid-cols-3 gap-3 gap-y-20 my-20">
       <Products />
     </div>
   </Layout>
