@@ -9,11 +9,12 @@ const Products = () => {
         query ProductPrices {
           prices: allStripePrice(
             filter: { active: { eq: true } }
-            sort: { fields: [unit_amount] }
+            sort: { fields: created, order: DESC }
           ) {
             edges {
               node {
                 id
+                created
                 active
                 currency
                 unit_amount

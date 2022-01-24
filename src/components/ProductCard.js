@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
         <div className="flex flex-row justify-between">
           <h4>{product.name}</h4>
           <div className="rounded-lg bg-yellow-400 px-3 py-2 -mt-2 mb-2 text-right font-semibold">
-            £{product.prices[0].unit_amount / 100}.00
+            {formatPrice(product.prices[0].unit_amount, "GBP")}
           </div>
         </div>
         <fieldset style={{ border: "none" }}>
