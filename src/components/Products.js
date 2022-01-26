@@ -1,8 +1,19 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, StaticQuery } from "gatsby"
 import ProductCard from "./ProductCard"
 
 const Products = () => {
+  // product quantities will change after build time
+  // => need to query the API dynamically
+  const [strapiProducts, setStrapiProducts] = useState([])
+  useEffect(() => {
+    fetch(`https://pedro-website-strapi.herokuapp.com/products-v-2-s/`)
+      .then(response => response.json())
+      .then(resultData => {
+        setStrapiProducts(resultData)
+      })
+  }, [])
+
   return (
     <StaticQuery
       query={graphql`
@@ -38,9 +49,6 @@ const Products = () => {
             edges {
               node {
                 strapiId
-                Description
-                Name
-                Quantity
                 StripeProductID
                 Images {
                   localFile {
@@ -62,15 +70,17 @@ const Products = () => {
           if (!products[product.id]) {
             // "join" data from Stripe with data from Strapi
             // Strapi contains the substantive product metadata
-            const product_ = allStrapiProductsV2S.edges.find(
-              edge => edge.node.StripeProductID === product.id
+            const product_ = strapiProducts.find(
+              strapiProduct => strapiProduct.StripeProductID === product.id
+            )
+            // Images come from the StaticQuery (for use with GatsbyImage component)
+            const productImage = allStrapiProductsV2S.edges.find(
+              strapiProductStatic =>
+                strapiProductStatic.node.StripeProductID === product.id
             )
             // In the failure case, use Stripe product data
-            if (product_) {
-              products[product.id] = product_.node
-            } else {
-              products[product.id] = product
-            }
+            products[product.id] = product_ || product
+            products[product.id].Images = productImage.node.Images
             products[product.id].prices = []
           }
           // Don't include product key - don't want infinite
@@ -83,13 +93,15 @@ const Products = () => {
             description: price.nickname, // rename key to something sensible
           })
         }
-        return (
+        return strapiProducts.length > 0 ? (
           // <div className="mt-4 md:mt-0">
           <React.Fragment>
             {Object.keys(products).map(key => (
               <ProductCard key={products[key].id} product={products[key]} />
             ))}
           </React.Fragment>
+        ) : (
+          <p>Nothing to see here</p>
         )
       }}
     />
