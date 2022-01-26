@@ -20,13 +20,14 @@ const ProductCard = ({ product }) => {
     setLoading(true)
 
     // update Strapi inventory
-    // TODO generally tidy this up!
-    let headers = new Headers()
-    headers.append("Authorization", `Bearer ${process.env.GATSBY_HEROKU_JWT}`)
-    headers.append("Content-Type", "application/x-www-form-urlencoded")
+    let headers = new Headers({
+      Authorization: `Bearer ${process.env.GATSBY_HEROKU_JWT}`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    })
 
-    let urlencoded = new URLSearchParams()
-    urlencoded.append("Quantity", `${product.Quantity - 1}`)
+    let urlencoded = new URLSearchParams({
+      Quantity: `${product.Quantity - 1}`,
+    })
 
     const res = await fetch(
       `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${product.strapiId}`,
