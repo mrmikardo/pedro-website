@@ -30,7 +30,8 @@ const ProductCard = ({ product }) => {
       Quantity: `${product.Quantity - 1}`,
     })
 
-    const res = await fetch(
+    // TODO handle errors
+    await fetch(
       `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${product.strapiId}`,
       {
         method: "PUT",
