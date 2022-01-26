@@ -19,7 +19,26 @@ const ProductCard = ({ product }) => {
     event.preventDefault()
     setLoading(true)
 
-    // const price = new FormData(event.target).get("priceSelect")
+    // update Strapi inventory
+    // TODO generally tidy this up!
+    let headers = new Headers()
+    headers.append("Authorization", `Bearer ${process.env.GATSBY_HEROKU_JWT}`)
+    headers.append("Content-Type", "application/x-www-form-urlencoded")
+
+    let urlencoded = new URLSearchParams()
+    urlencoded.append("Quantity", `${product.Quantity - 1}`)
+
+    const res = await fetch(
+      `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${product.strapiId}`,
+      {
+        method: "PUT",
+        headers: headers,
+        body: urlencoded,
+        redirect: "follow",
+      }
+    )
+
+    // init Stripe checkout flow
     const price = product.prices[0].id
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
@@ -39,14 +58,15 @@ const ProductCard = ({ product }) => {
     <div className="card mx-3 my-3 md:my-0 md:-mb-6">
       <form onSubmit={handleSubmit} className="mb-0">
         <div className="flex flex-row justify-between">
-          <h4>{product.name}</h4>
+          <h4>{product.Name}</h4>
           <div className="rounded-lg bg-yellow-400 px-3 py-2 -mt-2 mb-2 text-right font-semibold">
             {formatPrice(product.prices[0].unit_amount, "GBP")}
           </div>
         </div>
         <fieldset style={{ border: "none" }}>
           <legend>
-            <p className="mb-0">{product.description}</p>
+            <p className="mb-0">{product.Description}</p>
+            <p className="mb-0">{product.Quantity}</p>
           </legend>
           {/*
           <label>
@@ -62,8 +82,8 @@ const ProductCard = ({ product }) => {
           */}
         </fieldset>
         <GatsbyImage
-          image={getImage(product.localFiles[0])}
-          alt={`Image of ${product.name}`}
+          image={getImage(product.Images[0].localFile)}
+          alt={`Image of ${product.Name}`}
           className="mb-4 thumbnail"
         />
         <div className="flex items-center justify-center">

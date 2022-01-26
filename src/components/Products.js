@@ -6,29 +6,46 @@ const Products = () => {
   return (
     <StaticQuery
       query={graphql`
-        query ProductPrices {
-          prices: allStripePrice(
-            filter: { active: { eq: true } }
-            sort: { fields: created, order: DESC }
+        {
+          allStripePrice(
+            sort: { fields: unit_amount, order: DESC }
+            filter: { product: { active: { eq: true } } }
           ) {
             edges {
               node {
                 id
-                created
                 active
                 currency
                 unit_amount
-                nickname
                 product {
                   id
                   name
-                  description
                   localFiles {
                     childImageSharp {
                       gatsbyImageData(
-                        formats: [AUTO, WEBP, AVIF]
+                        formats: WEBP
                         placeholder: BLURRED
+                        aspectRatio: 1.5
                       )
+                    }
+                  }
+                }
+                nickname
+              }
+            }
+          }
+          allStrapiProductsV2S(sort: { fields: created_at }) {
+            edges {
+              node {
+                strapiId
+                Description
+                Name
+                Quantity
+                StripeProductID
+                Images {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(formats: WEBP)
                     }
                   }
                 }
@@ -37,13 +54,23 @@ const Products = () => {
           }
         }
       `}
-      render={({ prices }) => {
+      render={({ allStripePrice, allStrapiProductsV2S }) => {
         // Group prices by product
         const products = {}
-        for (const { node: price } of prices.edges) {
+        for (const { node: price } of allStripePrice.edges) {
           const product = price.product
           if (!products[product.id]) {
-            products[product.id] = product
+            // "join" data from Stripe with data from Strapi
+            // Strapi contains the substantive product metadata
+            const product_ = allStrapiProductsV2S.edges.find(
+              edge => edge.node.StripeProductID === product.id
+            )
+            // In the failure case, use Stripe product data
+            if (product_) {
+              products[product.id] = product_.node
+            } else {
+              products[product.id] = product
+            }
             products[product.id].prices = []
           }
           // Don't include product key - don't want infinite

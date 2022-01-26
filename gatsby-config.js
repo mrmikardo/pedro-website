@@ -32,7 +32,7 @@ module.exports = {
           "fashion-week",
           "portrait-page",
         ],
-        contentTypes: ["gallery"],
+        collectionTypes: ["products-v-2-s"],
         queryLimit: 1000,
       },
     },
