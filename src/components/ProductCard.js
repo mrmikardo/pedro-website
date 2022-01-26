@@ -14,6 +14,7 @@ const formatPrice = (amount, currency) => {
 
 const ProductCard = ({ product }) => {
   const [loading, setLoading] = useState(false)
+  const [quantity, setQuantity] = useState(product.Quantity)
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -38,6 +39,9 @@ const ProductCard = ({ product }) => {
         redirect: "follow",
       }
     )
+
+    // update component state
+    setQuantity(quantity - 1)
 
     // init Stripe checkout flow
     const price = product.prices[0].id
@@ -67,7 +71,7 @@ const ProductCard = ({ product }) => {
         <fieldset style={{ border: "none" }}>
           <legend>
             <p className="mb-0">{product.Description}</p>
-            <p className="mb-0">{product.Quantity}</p>
+            <p className="mb-0">{quantity}</p>
           </legend>
           {/*
           <label>
