@@ -103,11 +103,9 @@ const Products = () => {
               strapiProductStatic =>
                 strapiProductStatic.node.StripeProductID === product.id
             )
-            console.log("product ID" + product.id)
-            console.log("productImage" + productImage)
             // In the failure case, use Stripe product data
             products[product.id] = product_ || product
-            products[product.id].Images = productImage?.node?.Images
+            products[product.id].Images = productImage.node.Images
             products[product.id].prices = []
           }
           // Don't include product key - don't want infinite
