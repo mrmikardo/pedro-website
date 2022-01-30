@@ -31,15 +31,6 @@ const Products = () => {
                 product {
                   id
                   name
-                  localFiles {
-                    childImageSharp {
-                      gatsbyImageData(
-                        formats: WEBP
-                        placeholder: BLURRED
-                        aspectRatio: 1.5
-                      )
-                    }
-                  }
                 }
                 nickname
               }
@@ -53,7 +44,11 @@ const Products = () => {
                 Images {
                   localFile {
                     childImageSharp {
-                      gatsbyImageData(formats: WEBP)
+                      gatsbyImageData(
+                        formats: WEBP
+                        placeholder: BLURRED
+                        layout: CONSTRAINED
+                      )
                     }
                   }
                 }
