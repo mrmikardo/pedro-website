@@ -14,6 +14,11 @@ const formatPrice = (amount, currency) => {
 
 const ProductCard = ({ product }) => {
   const [loading, setLoading] = useState(false)
+  const [price, setPrice] = useState(product.prices[0].id)
+
+  const handlePriceSelect = event => {
+    setPrice(event.target.selectedOptions[0].value)
+  }
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -42,7 +47,6 @@ const ProductCard = ({ product }) => {
     )
 
     // init Stripe checkout flow
-    const price = product.prices[0].id
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
@@ -61,19 +65,20 @@ const ProductCard = ({ product }) => {
     <div className="card mx-3 my-3 md:my-0 md:-mb-6">
       <form onSubmit={handleSubmit} className="mb-0">
         <div className="flex flex-row justify-between">
-          <h4>{product.Name}</h4>
-          <div className="rounded-lg bg-yellow-400 px-3 py-2 -mt-2 mb-2 text-right font-semibold">
-            {formatPrice(product.prices[0].unit_amount, "GBP")}
-          </div>
+          <h2 className="truncate">{product.Name}</h2>
         </div>
+        <hr />
         <fieldset style={{ border: "none" }}>
           <legend>
-            <p className="mb-0">{product.Description}</p>
+            <p>{product.Description}</p>
           </legend>
-          {/*
+          <hr />
           <label>
-            Price{" "}
-            <select name="priceSelect" onChange={handleChange} className="rounded">
+            <select
+              name="priceSelect"
+              onChange={handlePriceSelect}
+              className="form-select block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            >
               {product.prices.map(price => (
                 <option key={price.id} value={price.id}>
                   {price.description}
@@ -81,19 +86,30 @@ const ProductCard = ({ product }) => {
               ))}
             </select>
           </label>
-          */}
         </fieldset>
         <GatsbyImage
           image={getImage(product.Images[0].localFile)}
           alt={`Image of ${product.Name}`}
-          className="mb-4 thumbnail"
+          className="mb-4 text-center bg-gray-100"
+          imgClassName="mx-auto"
+          style={{ "max-height": `210px`, width: `auto` }}
+          imgStyle={{
+            "max-height": `210px`,
+            width: `auto`,
+            display: `block`,
+            margin: `auto`,
+          }}
         />
         <div className="flex items-center justify-center">
           <button
-            disabled={loading}
-            className="rounded-lg bg-purple-400 hover:bg-cyan-250 transform hover:-translate-y-px shadow-lg text-sm font-semibold px-8 py-3 uppercase"
+            disabled={loading || product.Quantity === 0}
+            className={`rounded-lg shadow-lg text-sm font-semibold px-8 py-3 uppercase ${
+              product.Quantity === 0
+                ? "bg-gray-300"
+                : "bg-purple-400 hover:bg-cyan-250 transform hover:-translate-y-px"
+            }`}
           >
-            Buy
+            {product.Quantity === 0 ? `Sold out` : `Buy`}
           </button>
         </div>
       </form>
