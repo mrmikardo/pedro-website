@@ -3,6 +3,36 @@ import { graphql, StaticQuery } from "gatsby"
 import ProductCard from "./ProductCard"
 
 const Products = () => {
+  // update Strapi inventory
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const productID = params.get("productID")
+
+    if (productID) {
+      let headers = new Headers({
+        Authorization: `Bearer ${process.env.GATSBY_HEROKU_JWT}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      })
+
+      let urlencoded = new URLSearchParams({
+        Quantity: `${params.get("quantity")}`,
+      })
+
+      // TODO handle errors
+      const res = fetch(
+        // product.id is the *Strapi* ID, which is what we need here
+        `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${productID}`,
+        {
+          method: "PUT",
+          headers: headers,
+          body: urlencoded,
+          redirect: "follow",
+        }
+      )
+      // don't care about response data
+    }
+  })
+
   // product quantities will change after build time
   // => need to query the API dynamically
   const [strapiProducts, setStrapiProducts] = useState([])

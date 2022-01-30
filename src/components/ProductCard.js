@@ -24,34 +24,15 @@ const ProductCard = ({ product }) => {
     event.preventDefault()
     setLoading(true)
 
-    // update Strapi inventory
-    let headers = new Headers({
-      Authorization: `Bearer ${process.env.GATSBY_HEROKU_JWT}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    })
-
-    let urlencoded = new URLSearchParams({
-      Quantity: `${product.Quantity - 1}`,
-    })
-
-    // TODO handle errors
-    const res = await fetch(
-      // product.id is the *Strapi* ID, which is what we need here
-      `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${product.id}`,
-      {
-        method: "PUT",
-        headers: headers,
-        body: urlencoded,
-        redirect: "follow",
-      }
-    )
-
     // init Stripe checkout flow
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price, quantity: 1 }],
-      successUrl: `${window.location.origin}/store`,
+      // successUrl contains product ID so we can update inventory in Strapi
+      successUrl: `${window.location.origin}/store?productID=${
+        product.id
+      }&quantity=${product.Quantity - 1}`,
       cancelUrl: `${window.location.origin}/store`,
     })
 
