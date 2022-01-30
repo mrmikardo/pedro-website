@@ -92,9 +92,9 @@ const ProductCard = ({ product }) => {
           alt={`Image of ${product.Name}`}
           className="mb-4 text-center bg-gray-100"
           imgClassName="mx-auto"
-          style={{ "max-height": `210px`, width: `auto` }}
+          style={{ maxHeight: `210px`, width: `auto` }}
           imgStyle={{
-            "max-height": `210px`,
+            maxHeight: `210px`,
             width: `auto`,
             display: `block`,
             margin: `auto`,
