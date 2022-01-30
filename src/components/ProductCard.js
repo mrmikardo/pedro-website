@@ -30,8 +30,9 @@ const ProductCard = ({ product }) => {
     })
 
     // TODO handle errors
-    await fetch(
-      `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${product.strapiId}`,
+    const res = await fetch(
+      // product.id is the *Strapi* ID, which is what we need here
+      `https://pedro-website-strapi.herokuapp.com/products-v-2-s/${product.id}`,
       {
         method: "PUT",
         headers: headers,
