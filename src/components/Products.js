@@ -101,7 +101,7 @@ const Products = () => {
             ))}
           </React.Fragment>
         ) : (
-          <p>Nothing to see here</p>
+          <p>Store loading...</p>
         )
       }}
     />
