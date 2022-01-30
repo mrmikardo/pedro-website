@@ -46,14 +46,28 @@ const ProductCard = ({ product }) => {
     <div className="card mx-3 my-3 md:my-0 md:-mb-6">
       <form onSubmit={handleSubmit} className="mb-0">
         <div className="flex flex-row justify-between">
-          <h2 className="truncate">{product.Name}</h2>
+          <h2 className="truncate mb-0">{product.Name}</h2>
         </div>
-        <hr />
+        <hr className="mt-1 mb-4" />
         <fieldset style={{ border: "none" }}>
           <legend>
-            <p>{product.Description}</p>
+            <p className="mb-0">{product.Description}</p>
           </legend>
-          <hr />
+        </fieldset>
+        <GatsbyImage
+          image={getImage(product.Images[0].localFile)}
+          alt={`Image of ${product.Name}`}
+          className="mb-6 text-center bg-gray-100"
+          imgClassName="mx-auto"
+          style={{ maxHeight: `210px`, width: `auto` }}
+          imgStyle={{
+            maxHeight: `210px`,
+            width: `auto`,
+            display: `block`,
+            margin: `auto`,
+          }}
+        />
+        <fieldset style={{ border: "none" }} className="mb-3">
           <label>
             <select
               name="priceSelect"
@@ -68,19 +82,6 @@ const ProductCard = ({ product }) => {
             </select>
           </label>
         </fieldset>
-        <GatsbyImage
-          image={getImage(product.Images[0].localFile)}
-          alt={`Image of ${product.Name}`}
-          className="mb-4 text-center bg-gray-100"
-          imgClassName="mx-auto"
-          style={{ maxHeight: `210px`, width: `auto` }}
-          imgStyle={{
-            maxHeight: `210px`,
-            width: `auto`,
-            display: `block`,
-            margin: `auto`,
-          }}
-        />
         <div className="flex items-center justify-center">
           <button
             disabled={loading || product.Quantity === 0}
