@@ -34,6 +34,39 @@ const ProductCard = ({ product }) => {
         product.id
       }&quantity=${product.Quantity - 1}`,
       cancelUrl: `${window.location.origin}/store`,
+      shippingAddressCollection: {
+        allowedCountries: [
+          // All EU countries + GB
+          "AT", // Austria
+          "BE", // Belgium
+          "BG", // Bulgaria
+          "HR", // Croatia
+          "CY", // Republic of Cyprus
+          "CZ", // Czech Republic
+          "DK", // Denmark
+          "EE", // Estonia
+          "FI", // Finland
+          "FR", // France
+          "DE", // Germany
+          "GR", // Greece
+          "HU", // Hungary
+          "IE", // Ireland
+          "IT", // Italy
+          "LV", // Latvia
+          "LT", // Lithuania
+          "LU", // Luxembourg
+          "MT", // Malta
+          "NL", // Netherlands
+          "PT", // Poland
+          "PR", // PORTUGAL <3 <3 <3
+          "RO", // Romania
+          "SK", // Slovak Republic
+          "SI", // Slovenia
+          "ES", // Spain
+          "SE", // Sweden
+          "GB", // Blighty
+        ],
+      },
     })
 
     if (error) {
