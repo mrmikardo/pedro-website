@@ -60,10 +60,6 @@ const Sidebar = props => {
         >
           <div className="my-1">
             <span className="text-cyan-250">&#8212;&nbsp;</span>
-            <Link to="/">Home</Link>
-          </div>
-          <div className="my-1">
-            <span className="text-cyan-250">&#8212;&nbsp;</span>
             <Link to="/portraits">Portraits</Link>
           </div>
           <div className="my-1">
