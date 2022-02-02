@@ -328,6 +328,91 @@ const FashionWeekPage = ({ data }) => (
         />
       </div>
       {/* /FIFTEENTH ROW */}
+      {/* SIXTEENTH ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image18.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image18.alternativeText}
+        />
+      </div>
+      {/* /SIXTEENTH ROW */}
+      {/* SEVENTEENTH ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image19.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image19.alternativeText}
+        />
+      </div>
+      {/* /SEVENTEENTH ROW */}
+      {/* EIGHTEENTH ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image20.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image20.alternativeText}
+        />
+      </div>
+      {/* /EIGHTEENTH ROW */}
+      {/* NINETEENTH ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image21.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image21.alternativeText}
+        />
+      </div>
+      {/* /NINETEENTH ROW */}
+      {/* TWENTIETH ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image22.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image22.alternativeText}
+        />
+      </div>
+      {/* /TWENTIETH ROW */}
+      {/* TWENTY-FIRST ROW */}
+      <div className="my-8 col-span-2 flex justify-center">
+        <div className="mr-3">
+          <GatsbyImage
+            style={{ width: "400px" }}
+            image={getImage(
+              data.allStrapiFashionWeek.nodes[0].image23.localFile
+            )}
+            alt={data.allStrapiFashionWeek.nodes[0].image23.alternativeText}
+          />
+        </div>
+        <div className="ml-3">
+          <GatsbyImage
+            style={{ width: "400px" }}
+            image={getImage(
+              data.allStrapiFashionWeek.nodes[0].image24.localFile
+            )}
+            alt={data.allStrapiFashionWeek.nodes[0].image24.alternativeText}
+          />
+        </div>
+      </div>
+      {/* /TWENTY-FIRST ROW */}
+      {/* TWENTY-SECOND ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "450px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image25.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image25.alternativeText}
+        />
+      </div>
+      {/* /TWENTY-SECOND ROW */}
+      {/* TWENTY-THIRD ROW */}
+      <div className="col-span-2 flex justify-center">
+        <GatsbyImage
+          style={{ width: "826px" }}
+          image={getImage(data.allStrapiFashionWeek.nodes[0].image26.localFile)}
+          alt={data.allStrapiFashionWeek.nodes[0].image26.alternativeText}
+        />
+      </div>
+      {/* /TWENTY-THIRD ROW */}
     </div>
   </Layout>
 )
