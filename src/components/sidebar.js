@@ -19,7 +19,7 @@ const Sidebar = props => {
   return (
     <div className="md:hidden">
       <div
-        className={`fixed z-30 inset-y-0 right-0 w-56 px-8 py-4
+        className={`fixed z-50 inset-y-0 right-0 w-56 px-8 py-4
         overflow-auto flex flex-col justify-start
           transform ${
             props.isOpen

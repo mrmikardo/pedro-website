@@ -8,7 +8,7 @@ const Header = props => {
       style={{
         background: `#323234`,
       }}
-      className="grid grid-cols-3 md:grid-cols-2 gap-4"
+      className="sticky top-0 z-50 grid grid-cols-3 md:grid-cols-2 gap-4"
     >
       <div
         style={{
