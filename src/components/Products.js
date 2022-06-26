@@ -50,7 +50,7 @@ const Products = () => {
         {
           allStripePrice(
             sort: { fields: unit_amount, order: DESC }
-            filter: { product: { active: { eq: true } } }
+            filter: { active: { eq: true } }
           ) {
             edges {
               node {
